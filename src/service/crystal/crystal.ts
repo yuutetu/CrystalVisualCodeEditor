@@ -1,6 +1,8 @@
 import * as Blockly from 'blockly/core'
 import { Block, CodeGenerator } from 'blockly/core'
 import * as io from './io'
+import * as logic from './logic'
+import * as math from './math'
 
 /**
  * Crystal code generator
@@ -115,8 +117,8 @@ const generators = {
   ...io.generators,
   // ...variables.generators,
   // ...string.generators,
-  // ...logic.generators,
-  // ...math.generators,
+  ...logic.generators,
+  ...math.generators,
   // ...array.generators,
 } satisfies Record<
   string,

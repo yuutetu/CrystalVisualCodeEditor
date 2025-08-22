@@ -19,10 +19,6 @@ const Home = () => {
   const initialXml = xmlBase64 != undefined ?
     atob(decodeURIComponent(xmlBase64)) : "{}"
 
-  useEffect(() => {
-    console.log(initialXml)
-  }, [initialXml])
-
   const {workspace: ws, json, xml} = useBlocklyWorkspace({
     ref: ref,
     initialXml: initialXml,
@@ -128,25 +124,25 @@ const MY_TOOLBOX = `
     <block type="io_read_numbers"/>
     <block type="io_puts"/>
   </category>
-<!--  <category name="リテラル">-->
-<!--    <block type="text"/>-->
-<!--    <block type="math_number"/>-->
-<!--  </category>-->
-<!--  <category name="変数/演算">-->
-<!--    <block type="variables_set"/>-->
-<!--    <block type="variables_get"/>-->
-<!--    <block type="math_arithmetic"/>-->
-<!--    <block type="get_index"/>-->
-<!--    <block type="slice"/>-->
-<!--    <block type="call_method"/>-->
-<!--    <block type="logic_compare"/>-->
-<!--    <block type="text_join"/>-->
-<!--  </category>-->
-<!--  <category name="制御">-->
-<!--    <block type="controls_if"/>-->
-<!--    <block type="logic_compare"/>-->
-<!--    <block type="times"/>-->
-<!--  </category>-->
+  <category name="リテラル">
+    <block type="text"/>
+    <block type="math_number"/>
+  </category>
+  <category name="変数/演算">
+    <block type="variables_set"/>
+    <block type="variables_get"/>
+    <block type="math_arithmetic"/>
+    <block type="get_index"/>
+    <block type="slice"/>
+    <block type="call_method"/>
+    <block type="logic_compare"/>
+    <block type="text_join"/>
+  </category>
+  <category name="制御">
+    <block type="controls_if"/>
+    <block type="logic_compare"/>
+    <block type="times"/>
+  </category>
 </xml>
 `
 
