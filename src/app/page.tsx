@@ -3,11 +3,11 @@ import {useBlocklyWorkspace} from "react-blockly"
 import '@/service/blocks/blocks'
 import {useCallback, useEffect, useRef, useState} from "react";
 import {UseBlocklyProps} from "react-blockly/dist/BlocklyWorkspaceProps";
-import {rubyGenerator} from "@/service/ruby/ruby";
 import { EditorView } from '@codemirror/view'
 import dynamic from "next/dynamic";
 import * as Blockly from "blockly";
 import {useSearchParams} from "next/navigation";
+import {crystalGenerator} from "@/service/crystal/crystal";
 
 
 const ReactCodeMirror = dynamic(() => import('@uiw/react-codemirror'), { ssr: false });
@@ -51,7 +51,7 @@ const Home = () => {
 
   const openDrawerAndGenerate = useCallback(() => {
     if (!ws) return
-    const generated = rubyGenerator.workspaceToCode(ws)
+    const generated = crystalGenerator.workspaceToCode(ws)
     setCode(generated)
     setDrawerOpen(true);
   }, [ws]);
@@ -128,25 +128,25 @@ const MY_TOOLBOX = `
     <block type="io_read_numbers"/>
     <block type="io_puts"/>
   </category>
-  <category name="リテラル">
-    <block type="text"/>
-    <block type="math_number"/>
-  </category>
-  <category name="変数/演算">
-    <block type="variables_set"/>
-    <block type="variables_get"/>
-    <block type="math_arithmetic"/>
-    <block type="get_index"/>
-    <block type="slice"/>
-    <block type="call_method"/>
+<!--  <category name="リテラル">-->
+<!--    <block type="text"/>-->
+<!--    <block type="math_number"/>-->
+<!--  </category>-->
+<!--  <category name="変数/演算">-->
+<!--    <block type="variables_set"/>-->
+<!--    <block type="variables_get"/>-->
+<!--    <block type="math_arithmetic"/>-->
+<!--    <block type="get_index"/>-->
+<!--    <block type="slice"/>-->
+<!--    <block type="call_method"/>-->
 <!--    <block type="logic_compare"/>-->
 <!--    <block type="text_join"/>-->
-  </category>
-  <category name="制御">
-    <block type="controls_if"/>
-    <block type="logic_compare"/>
-    <block type="times"/>
-  </category>
+<!--  </category>-->
+<!--  <category name="制御">-->
+<!--    <block type="controls_if"/>-->
+<!--    <block type="logic_compare"/>-->
+<!--    <block type="times"/>-->
+<!--  </category>-->
 </xml>
 `
 
